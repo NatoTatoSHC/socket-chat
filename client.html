@@ -42,7 +42,7 @@
                 var item = document.createElement('li');
                 item.textContent = msg;
                 messages.appendChild(item);
-                window.scrollTo(0, document.body.scrollHeight-500);
+                window.scrollTo(0, 100);
             });
             socket.on('updCount', (users) => {
                 document.getElementById('title').innerHTML = "Socket Chat ("+users+")";
