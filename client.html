@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Socket Chat</title>
+        <title id="title">Socket Chat</title>
         <style>
             body { margin: 0; padding-bottom: 3rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
 
@@ -43,6 +43,9 @@
                 item.textContent = msg;
                 messages.appendChild(item);
                 window.scrollTo(0, document.body.scrollHeight);
+            });
+            socket.on('updCount', (users) => {
+                document.getElementById('title').innerHTML = "Socket Chat ("+users+")";
             });
         </script>
     </body>
